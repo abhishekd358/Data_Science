@@ -1,0 +1,33 @@
+###VARIABLE SCOPE
+-- Global Variable :
+              - declare in (__main__) is Global variable
+              - the variable declare outside of the function is also Global Variable
+              - accessible anywhere in the program 
+-- Local Variable : 
+              - declare in functions
+              - accessible only inside the functions
+              
+Age = 20 
+Age = 30 Re-assigning a different value to the same variable
+
+most other programming languages except python, the two valriable have same memory addresses
+but it not same in python case, in python variables do not have fixed locations.The location changes every time their value changes.
+# EXPLAINATION : the variable Age is created as a label pointing to a memory location where 20 is already stored. 
+If 20 is not present in any of the memory locations, then 20 is stored in an empty memory location with a unique address and then the Age is made to point to that memory location.
+
+*NOTE :  when we create a variable, we actually create an object somewhere in the memory with a unique mapping or ID/Address.In python memory address can get using 'id()' method.
+
+###TYPECASTING
+ - use to convert one data type to another data type
+ --Implicit Type Conversion :
+             - no user intervestion require
+             - automatically python give the data type 
+             example : >a = 2.3
+                       >print(type(a))
+                       
+ --Explicit Type Conversion :
+             - understand from below example
+             example : >a = 2.23
+                       >n = int(a)
+                       >print(type(a))
+                       >print(type(n))
