@@ -50,3 +50,47 @@ s2 = pd.Series(20, index=[11, 12, 13])
 print(s1+s2) # output is Float type
 print()
 print()
+
+print("========DataFrame In Pandas========") # 2-Dimenstional
+# variable_name = pd.DataFrame(dictionaries/lists, columns=['column_name'], index=['index_values', 'index_values', ....])
+
+# DataFrame
+print('DataFrame with List')
+arr2 = [1, 2, 3, 4, 5, 6, 7]
+out2 = pd.DataFrame(arr2)
+print(out2)
+print('-----------------------')
+
+# DataFrame 
+print('DataFrame with Dictionaries')
+dict2 = {
+    'fruits' : ['pineapple','blueberry','apple'],
+    'quantity' : [10, 4, 8]
+}
+out3 = pd.DataFrame(dict2)
+print(out3)
+print('-----------------------')
+
+# columns as a parameter
+print('column as parameter')
+out4 = pd.DataFrame(dict2, columns=['fruits'], index=['10','11','12']) # changing index 
+print(out4)
+print('-----------------------')
+
+print('accessing particular row value from column')
+# data value accessing from a particular columns 
+# variable_name['column_name'][row_name]
+print(out3['fruits'][2]) 
+print('-----------------------')
+
+# creating DataFrame Using Two or more  Series
+print("creating DataFrame using Series")
+
+dict3 = {
+    'city' : pd.Series(['Mumbai','Delhi','Hyderabad','kolkata']),
+    'population' : pd.Series([10, 4, 8, 23])
+}
+out5 = pd.DataFrame(dict3)
+print(out5)
+print()
+print()
