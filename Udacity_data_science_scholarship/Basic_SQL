@@ -1,0 +1,61 @@
+--1 (SELECT -> Use to Display Data, * -> extract all information) 
+/* Getting all details from the Order table from the Parch & Posey Database*/
+SELECT *
+FROM orders;
+
+--2 
+/* Getting specific Columns details as id, account_id, and occurred_at from the Order table*/
+SELECT id,account_id,standard_qty
+FROM orders;
+
+--3 (LIMIT -> LIMIT always at end of query)
+/* Displays all the data in the occurred_at, account_id, and channel columns of the web_events table,
+ and limits the output to only the first 15 rows.*/
+SELECT occurred_at,
+       account_id,
+        channel
+FROM web_events;
+
+--3 (ORDER BY -> Sort the result data in ascending and decending order. By Default it set to ASC ascending order.)
+/*Write a query to return the 10 earliest orders in the orders table. Include the id, occurred_at, and total_amt_usd.*/
+SELECT id,
+       occurred_at,
+       total_amt_usd
+FROM orders
+LIMIT 10;
+
+/*Write a query to return the top 5 orders in terms of the largest total_amt_usd. Include the id, account_id, and total_amt_usd.*/
+SELECT id,
+       occurred_at,
+       total_amt_usd
+FROM orders
+ORDER BY total_amt_usd DESC
+LIMIT 5;
+
+/*Write a query to return the lowest 20 orders in terms of the smallest total_amt_usd. Include the id, account_id, and total_amt_usd.*/
+SELECT id,
+       occurred_at,
+       total_amt_usd
+FROM orders
+ORDER BY total_amt_usd ASC
+LIMIT 20;
+
+--ORDER BY Part II -> WE can use DESC|ASC on specific columns. Let in below example the DESC applied to total_amt_usd column 
+but eventually the data of account_id column change respective to total_amt_usd column because DESC applied to only total_amt_usd.*/
+SELECT  account_id,
+        total_amt_usd
+FROM orders
+ORDER By total_amt_usd DESC, account_id;
+
+/*Write a query that displays the order ID, account ID, and total dollar amount for all the orders, 
+sorted first by the account ID (in ascending order it set by default), and then by the total dollar amount (in descending order).*/
+SELECT  id,
+        account_id,
+        total_amt_usd
+FROM orders
+ORDER By account_id, total_amt_usd DESC;
+/* write a query that again displays order ID, account ID, and total dollar amount for each order, but this time 
+sorted first by total dollar amount (in descending order), and then by account ID (in ascending order it set by default).*/
+SELECT id, account_id, total_amt_usd
+FROM orders
+ORDER BY total_amt_usd DESC, account_id;
