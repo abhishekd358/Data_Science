@@ -1,5 +1,4 @@
 # Tableau 
-![Tableau Image](tableau.jpg) 
 ## Project Overview
 
 This GitHub repository contains the culmination of my efforts in gaining Tableau knowledge:
